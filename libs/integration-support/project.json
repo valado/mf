@@ -1,0 +1,9 @@
+{
+  "name": "integration-support",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/integration-support/src",
+  "projectType": "library",
+  "tags": [],
+  "// targets": "to see all targets run: nx show project integration-support --web",
+  "targets": {}
+}

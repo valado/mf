@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>RemoteWcomp</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        height: 100%;
+      }
+    </style>
+  </head>
+
+  <script>
+    function renderWebComponent(customTag) {
+      return function () {
+        const webcomp = document.createElement(customTag);
+        const notImplemented = () => {
+          console.warn('Not implemented!');
+        };
+        const mockContext = {
+          basePath: '/',
+          themeOptions: {
+            theme: 'dark',
+          },
+        };
+        webcomp.portalContext = mockContext;
+        document.body.appendChild(webcomp);
+      };
+    }
+
+    window.addEventListener('load', renderWebComponent('example-remote'));
+  </script>
+
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
